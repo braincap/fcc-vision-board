@@ -1,0 +1,46 @@
+:root {
+  --green: #1bccba;
+  --red: #f14960;
+  --orange: #f6a147;
+  --blue: #27aae2;
+  --black: #211f20;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--green);
+}
+
+nav.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2em;
+  padding: 1.2em;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+nav.header .logo {
+  font-family: 'Lobster', cursive;
+}
