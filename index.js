@@ -8,6 +8,7 @@ const keys = require('./config/keys');
 mongoose.connect(keys.mongoURI);
 
 require('./models/User');
+require('./models/Card');
 require('./services/passport');
 
 const app = express();
@@ -24,6 +25,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/authRoutes')(app);
+require('./routes/cardRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Listening to ${PORT}`));

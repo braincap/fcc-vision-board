@@ -4,12 +4,12 @@ import * as actions from '../actions';
 import normalButton from '../assets/btn_google_signin_light_normal_web.png';
 import focusButton from '../assets/btn_google_signin_light_focus_web.png';
 import pressedButton from '../assets/btn_google_signin_light_pressed_web.png';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
   state = { buttonState: normalButton };
 
   renderHeaderItems() {
-    console.log(this.props.auth);
     switch (this.props.auth) {
       case null:
         return [];
@@ -27,7 +27,7 @@ class Header extends Component {
         ];
       default:
         return [
-          <a href="/api/logout" className="logout">
+          <a key="0" href="/api/logout" className="logout">
             <h3>Logout</h3>
           </a>
         ];
@@ -38,7 +38,9 @@ class Header extends Component {
     return (
       <nav className="header">
         <div className="left-menu">
-          <h1 className="logo">VisionBoard</h1>
+          <h1 className="logo">
+            <Link to="/">VisionBoard</Link>
+          </h1>
         </div>
         <div className="right-menu">{this.renderHeaderItems()}</div>
       </nav>

@@ -6,7 +6,6 @@ import './App.css';
 
 import Header from './components/Header';
 import Content from './components/Content';
-import UserBoard from './components/UserBoard';
 
 class App extends Component {
   componentDidMount() {
@@ -16,11 +15,11 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <main>
+        <div className="main">
           <Route path="/" component={Header} />
           <Route exact path="/" component={Content} />
-          <Route exact path="/:user" component={UserBoard} />
-        </main>
+          <Route exact path="/:user" component={Content} />
+        </div>
       </BrowserRouter>
     );
   }
