@@ -15,7 +15,7 @@ class Header extends Component {
         return [];
       case false:
         return [
-          <a href="/auth/google" className="login">
+          /*  <a href="/auth/google" className="login">
             <img
               src={this.state.buttonState}
               alt="Login with Google"
@@ -23,6 +23,9 @@ class Header extends Component {
               onMouseOut={() => this.setState({ buttonState: normalButton })}
               onMouseDown={() => this.setState({ buttonState: pressedButton })}
             />
+          </a> */
+          <a className="button" href="/auth/google">
+            <span>Login with Google</span>
           </a>
         ];
       default:
