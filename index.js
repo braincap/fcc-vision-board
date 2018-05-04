@@ -16,10 +16,6 @@ require('./services/passport');
 const app = express();
 // app.use(morgan('dev'));
 
-app.get('/test', (req, res) => {
-  console.log(res);
-});
-
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -36,7 +32,6 @@ require('./routes/authRoutes')(app);
 require('./routes/cardRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
-  console.log('production');
   app.use(express.static('client/build'));
   const path = require('path');
   app.get('*', (req, res) => {
